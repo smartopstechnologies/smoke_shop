@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
+const useCustomDomain = false // set to false to deploy under /smoke_shop on GitHub Pages
 const isProd = process.env.NODE_ENV === 'production'
-const basePath = isProd ? '/smoke_shop' : ''
+const basePath = isProd && !useCustomDomain ? '/smoke_shop' : ''
 
 const nextConfig = {
   output: 'export',
