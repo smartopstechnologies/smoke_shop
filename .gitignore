@@ -43,7 +43,6 @@ Thumbs.db
 
 # node modules
 node_modules
-package-lock.json
 yarn.lock
 
 # OS temp files
