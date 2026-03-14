@@ -1,12 +1,15 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+const basePath = isProd ? '/smoke_shop' : ''
+
 const nextConfig = {
   output: 'export',
-  // Update basePath if deploying to a GitHub Pages sub-path.
-  // For a custom domain (e.g. acesmokeshopnj.com), remove the basePath line entirely.
-  // basePath: '/Smokeshop_WebApp',
+  ...(basePath && { basePath }),
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   images: {
     unoptimized: true,
-    // All images are now served from /public/images/ — no external CDNs needed.
   },
 }
 

@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react'
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 /* ═══════════════════════════════════════════════════════════════
    STORE DATA
    ─────────────────────────────────────────────────────────────
@@ -17,26 +19,26 @@ import { useState, useEffect, useRef } from 'react'
      Edit the PHOTOS array below.
 ═══════════════════════════════════════════════════════════════ */
 const PHOTOS: string[] = [
-  '/images/photo-01.jpg',
-  '/images/photo-02.jpg',
-  '/images/photo-03.jpg',
-  '/images/photo-04.jpg',
-  '/images/photo-05.jpg',
-  '/images/photo-06.jpg',
-  '/images/photo-07.jpg',
-  '/images/photo-08.jpg',
-  '/images/photo-09.jpg',
-  '/images/photo-10.jpg',
-  '/images/photo-11.jpg',
-  '/images/photo-12.jpg',
-  '/images/photo-13.jpg',
-  '/images/photo-14.jpg',
-  '/images/photo-15.jpg',
-  '/images/photo-16.jpg',
-  '/images/photo-17.jpg',
-  '/images/photo-18.jpg',
-  '/images/photo-19.jpg',
-  '/images/photo-20.jpg',
+  `${BASE}/images/photo-01.jpg`,
+  `${BASE}/images/photo-02.jpg`,
+  `${BASE}/images/photo-03.jpg`,
+  `${BASE}/images/photo-04.jpg`,
+  `${BASE}/images/photo-05.jpg`,
+  `${BASE}/images/photo-06.jpg`,
+  `${BASE}/images/photo-07.jpg`,
+  `${BASE}/images/photo-08.jpg`,
+  `${BASE}/images/photo-09.jpg`,
+  `${BASE}/images/photo-10.jpg`,
+  `${BASE}/images/photo-11.jpg`,
+  `${BASE}/images/photo-12.jpg`,
+  `${BASE}/images/photo-13.jpg`,
+  `${BASE}/images/photo-14.jpg`,
+  `${BASE}/images/photo-15.jpg`,
+  `${BASE}/images/photo-16.jpg`,
+  `${BASE}/images/photo-17.jpg`,
+  `${BASE}/images/photo-18.jpg`,
+  `${BASE}/images/photo-19.jpg`,
+  `${BASE}/images/photo-20.jpg`,
 ]
 
 const HOURS = [
@@ -533,7 +535,7 @@ export default function AceSmokeShop() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/logo.png"
+            src={`${BASE}/images/logo.png`}
             alt="Ace Smoke Shop"
             style={{ height: 44, width: 'auto', display: 'block', objectFit: 'contain' }}
             onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
@@ -1024,7 +1026,7 @@ export default function AceSmokeShop() {
             onMouseOut={e => (e.currentTarget.style.color = 'rgba(255,255,255,.5)')}
           >
             <img
-              src="/images/smartops_logo_only.png"
+              src={`${BASE}/images/smartops_logo_only.png`}
               alt="SmartOps Technologies"
               className="blink"
               style={{ height: 18, width: 'auto', display: 'block', objectFit: 'contain', opacity: 0.6 }}
